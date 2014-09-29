@@ -1,0 +1,6 @@
+fabric==1.10
+django==1.6
+glue==0.9.4
+redis==2.10.3
+django-grappelli==2.6.1
+south==1.0

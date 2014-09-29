@@ -1,0 +1,4 @@
+*.pyc
+search/*.pyc
+.idea/*
+db.sqlite3
