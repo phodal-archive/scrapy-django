@@ -3,3 +3,6 @@
 search/*.pyc
 .idea/*
 db.sqlite3
+*~
+*/*~
+*/json/*.json

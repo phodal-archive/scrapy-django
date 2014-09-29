@@ -52,6 +52,8 @@ ITEM_PIPELINES = {
     'spider.pipelines.GuokrJsonWithEncodingPipeline': 800,
 }
 
+
+
 try:
     from local_settings import *
 except ImportError:
