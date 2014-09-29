@@ -15,3 +15,11 @@ class PersonItem(DjangoItem):
     # name = scrapy.Field()
     django_model = Person
     name = scrapy.Field(default='No Name')
+
+class GuokrItem(scrapy.Item):
+    title_zh = scrapy.Field()
+    title_en = scrapy.Field()
+    link = scrapy.Field()
+    desc = scrapy.Field()
+    count = scrapy.Field()
+    update_date = scrapy.Field()

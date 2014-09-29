@@ -5,3 +5,4 @@ glue==0.9.4
 redis==2.10.3
 django-grappelli==2.6.1
 south==1.0
+scrapy-redis

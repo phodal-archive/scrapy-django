@@ -5,6 +5,8 @@ from fabric.operations import local
 def clean():
     local('rm -rf ./deploy')
 
+def fetch():
+    local('scrapy crawl guokr -o spider/json/guokr_items.json')
 
 def regen():
     clean()
