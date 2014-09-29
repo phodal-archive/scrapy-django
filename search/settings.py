@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'allcontent',
 )
 
 STATICFILES_FINDERS = (
@@ -67,10 +68,10 @@ WSGI_APPLICATION = 'search.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default' : {
+      'ENGINE' : 'django_mongodb_engine',
+      'NAME' : 'guokr'
+   }
 }
 
 # Internationalization
@@ -91,3 +92,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates').replace('\\','/'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR,'static')

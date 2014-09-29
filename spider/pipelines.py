@@ -7,6 +7,8 @@
 import codecs
 import json
 
+from pymongo import MongoClient
+
 
 class GuokrJsonWithEncodingPipeline(object):
     def __init__(self):
@@ -24,3 +26,20 @@ class GuokrJsonWithEncodingPipeline(object):
         self.encode_file.write("]")
         self.file.close()
         self.encode_file.close()
+
+
+class SaveMongodbPipeline(object):
+    def __init__(self):
+        self.client = MongoClient('localhost', 27017)
+        self.db = self.client['guokr']
+        self.content = self.db.allcontent_content
+        self.file = codecs.open('spider/json/guokr_items.json', 'w', encoding='utf-8')
+
+    def process_item(self, item, spider):
+        print dict(item)
+        self.content.insert(dict(item))
+        return item
+
+    def spider_closed(self, spider):
+        self.file.close()
+        self.db.close()

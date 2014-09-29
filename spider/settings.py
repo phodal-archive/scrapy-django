@@ -50,6 +50,7 @@ USER_AGENTS = [
 
 ITEM_PIPELINES = {
     'spider.pipelines.GuokrJsonWithEncodingPipeline': 800,
+    'spider.pipelines.SaveMongodbPipeline': 800,
 }
 
 

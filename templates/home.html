@@ -1,0 +1,14 @@
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/pure-min.css' %}"/>
+    <title>慕课Mooc | {{result.title_en}}</title>
+</head>
+
+<body>
+    <div id="content">
+        <h1><a href="{{result.link}}" alt="{{result.title_en}}">{{result.title_zh}}</a></h1>
+        {{result.count}}
+    </div>
+</body>
+</html>
